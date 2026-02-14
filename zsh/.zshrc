@@ -2,10 +2,15 @@
 # Basic shell behavior
 # ----------------------------
 
+ZSH_THEME="robbyrussell"
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=bat
 export LESS="-R"
+export DOTFILES_DIR="~/dotfiles/"
 
 setopt AUTO_CD
 setopt CORRECT
@@ -34,6 +39,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(git)
 
 # ----------------------------
 # fzf integration
@@ -72,6 +78,18 @@ alias dg="lazydocker"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+
+alias rzsh="source ~/.zshrc"
+alias zshconf="nvim ~/.zshrc"
+alias editconf="nvim ~/.config/"
+alias editdot="nvim $DOTFILES_DIR"
+
+# ----------------------------
+# Arch
+# ----------------------------
+alias pku="sudo pacman -Sy"
+alias pki="sudo pacman -S --needed --noconfirm"
+alias sysupgrade="sudo pacman -Syu"
 
 # ----------------------------
 # Path additions
